@@ -1,0 +1,19 @@
+.profile__edit-avatar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+}
+
+.profile__edit-avatar:hover .profile__avatar {
+    transition: opacity .5s linear;
+    opacity: .4;
+}
+
+.profile__edit-avatar:hover .profile__pencil {
+    display: block;
+}

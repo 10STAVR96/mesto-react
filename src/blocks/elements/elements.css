@@ -1,0 +1,33 @@
+@import url(./__element/elements__element.css);
+@import url(./__image/elements__image.css);
+@import url(./__remove/elements__remove.css);
+@import url(./__info/elements__info.css);
+@import url(./__name/elements__name.css);
+@import url(./__like-group/elements__like-group.css);
+@import url(./__like/elements__like.css);
+@import url(./__like-counter/elements__like-counter.css);
+@import url(./__like/_active/elements__like_active.css);
+
+.elements {
+    max-width: 882px;
+    display: grid;
+    grid-template-columns: repeat(3, 282px);
+    grid-column-gap: 18px;
+    justify-content: center;
+    grid-row-gap: 20px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+@media screen and (max-width: 1023px) {
+    .elements {
+        grid-template-columns: repeat(2, 282px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .elements {
+        grid-template-columns: 282px;
+        padding-top: 36px;
+    }
+}

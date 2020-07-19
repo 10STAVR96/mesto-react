@@ -1,0 +1,5 @@
+.popup_opened {                /*в firefox все плавно открывается и закрывается*/
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
