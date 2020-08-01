@@ -120,7 +120,6 @@ function App() {
     .then(([user, cards]) => {
       setCurrentUser(user);
       setCards(cards);
-      console.log('done');
     })
     .catch((err) => {
       console.log(err);
@@ -131,7 +130,15 @@ function App() {
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
       <Header />
-      <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} onImageClick={setCurrentImage} cards={cards} onCardLike={handleCardLike} onCardDelete={handleCardDelete} />
+      <Main 
+        onEditProfile={handleEditProfileClick} 
+        onAddPlace={handleAddPlaceClick} 
+        onEditAvatar={handleEditAvatarClick} 
+        onImageClick={setCurrentImage} 
+        cards={cards} 
+        onCardLike={handleCardLike} 
+        onCardDelete={handleCardDelete} 
+      />
       <Footer />
 
       <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
