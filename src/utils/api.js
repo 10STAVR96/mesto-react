@@ -35,7 +35,7 @@ class Api {
                 return Promise.reject(`Ошибка: ${res.status}`);
             });
     }
-    editProfileUser(name, about) {
+    setProfileUserInfo(name, about) {
         return fetch(this._baseUrl+'users/me', {
             method: 'PATCH', 
             headers: this._headers,
@@ -51,7 +51,7 @@ class Api {
                 return Promise.reject(`Ошибка: ${res.status}`);
             });
     }
-    editProfileAvatar(link) {
+    setProfileAvatar(link) {
         return fetch(this._baseUrl+'users/me/avatar', {
             method: 'PATCH', 
             headers: this._headers,
@@ -80,23 +80,11 @@ class Api {
                     return res.json();
                 }
                 return Promise.reject(`Ошибка: ${res.status}`);
-            });
+            })
     }
-    addLike(card) {
-        return fetch(this._baseUrl+'cards/likes/'+card.id, {
-            method: 'PUT',
-            headers: this._headers,
-        })
-            .then((res) => {
-                if(res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}`);
-            });
-    }
-    deleteLikes(card) {
-        return fetch(this._baseUrl+'cards/likes/'+card.id, {
-            method: 'DELETE',
+    changeLikeStatus(id, status) {
+        return fetch(this._baseUrl+'cards/likes/'+id, {
+            method: `${status ? 'PUT' : 'DELETE'}`,
             headers: this._headers,
         })
             .then((res) => {

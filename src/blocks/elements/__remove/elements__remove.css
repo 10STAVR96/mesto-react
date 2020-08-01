@@ -6,6 +6,7 @@
     width: 22px;
     height: 20px;
     border: none;
+    visibility: visible;
 }
 
 .elements__remove:hover {
