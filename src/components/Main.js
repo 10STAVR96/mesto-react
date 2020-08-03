@@ -26,11 +26,9 @@ function Main(props) {
       </section>
 
       <section className="elements">
-        <CurrentUserContext.Provider value={currentUser}>
         {props.cards && props.cards.map((card) => (
           <Card key={card._id} card={card} onCardClick={props.onImageClick} onCardLike={props.onCardLike} onCardDelete={props.onCardDelete} />
         ))}
-        </CurrentUserContext.Provider>
       </section>
       
     </main>

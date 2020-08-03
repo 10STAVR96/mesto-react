@@ -12,6 +12,7 @@
     border-radius: 10px;
     width: 430px;
     height: fit-content;
+    max-height: 335px;
     max-width: 80%;
     color: black;
 }
@@ -19,5 +20,6 @@
 @media screen and (max-width: 374px) {
     .popup__container {
         width: 240px;
+        max-height: 251px;
     }
 }

@@ -8,6 +8,8 @@ import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
 import ImagePopup from './ImagePopup';
 import api from '../utils/api';
+import formValidator from '../utils/formValidator';
+import { formElements } from '../utils/utils';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function App() {
@@ -124,6 +126,13 @@ function App() {
     .catch((err) => {
       console.log(err);
     });
+
+    const formProfileValidation = new formValidator(formElements, document.querySelector('#form-profile')); /*валидация формы профиля*/
+    const formAvatarValidation = new formValidator(formElements, document.querySelector('#form-avatar')); /*валидация формы изменения аватара*/
+    const formCardValidation = new formValidator(formElements, document.querySelector('#form-card')); /*валидация формы добавления карточки*/
+    formProfileValidation.enableValidation();
+    formAvatarValidation.enableValidation();
+    formCardValidation.enableValidation();
   }, []);
 
   return (
