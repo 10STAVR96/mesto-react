@@ -8,7 +8,7 @@ import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
 import ImagePopup from './ImagePopup';
 import api from '../utils/api';
-import formValidator from '../utils/formValidator';
+import FormValidator from '../utils/FormValidator';
 import { formElements } from '../utils/utils';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
@@ -127,9 +127,9 @@ function App() {
       console.log(err);
     });
 
-    const formProfileValidation = new formValidator(formElements, document.querySelector('#form-profile')); /*валидация формы профиля*/
-    const formAvatarValidation = new formValidator(formElements, document.querySelector('#form-avatar')); /*валидация формы изменения аватара*/
-    const formCardValidation = new formValidator(formElements, document.querySelector('#form-card')); /*валидация формы добавления карточки*/
+    const formProfileValidation = new FormValidator(formElements, document.querySelector('#form-profile')); /*валидация формы профиля*/
+    const formAvatarValidation = new FormValidator(formElements, document.querySelector('#form-avatar')); /*валидация формы изменения аватара*/
+    const formCardValidation = new FormValidator(formElements, document.querySelector('#form-card')); /*валидация формы добавления карточки*/
     formProfileValidation.enableValidation();
     formAvatarValidation.enableValidation();
     formCardValidation.enableValidation();

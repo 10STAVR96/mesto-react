@@ -1,5 +1,5 @@
 /*ниже класс валидации форм*/
-export default class formValidator {
+export default class FormValidator {
     constructor(formObject, formName) {
         this._formName = formName;
         this._inactiveButtonClass = formObject.inactiveButtonClass;
